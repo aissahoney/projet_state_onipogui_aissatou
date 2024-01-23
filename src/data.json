@@ -1,0 +1,38 @@
+{
+    "select": [
+        {    
+            "title": "Arcade",
+            "price": 9,
+            "src":"./img/arcade.svg"
+        },
+        {
+            "title": "Advenced",
+            "price": 12,
+            "src":"./img/advenced.svg"
+        },
+        {
+            "title": "Pro",
+            "price": 15,
+            "src":"./img/pro.svg"
+        }
+    ],
+    "add":[ 
+        {
+            "title": "Online service",
+            "text": "Access to multiplayer games",
+            "price": 1
+        },
+        {
+            "title": "Larger storage",
+            "text": "Extra 1TB of cloud save",
+            "price": 2
+        },
+        {
+            "title": "Customizable Profile",
+            "text": "Custom theme on your profile",
+            "price": 2
+        }
+    ]
+
+}
+
