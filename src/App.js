@@ -10,8 +10,17 @@ import Step4 from './components/Step4/Step4';
 
 
 function App() {
- const[ monthly, setMonthly]= useState(true)
- const [checked, setChecked] = useState(true);
+  const [pick, setPick] = useState(true)
+  const [tabPick, setTabPick] = useState([])
+  const [checked, setChecked] = useState(true);
+
+
+  const handlePick = (item) => {
+    if (pick) {
+      setTabPick([...tabPick, item])
+    }
+    console.log(tabPick)
+  }
 
   //slide page
   const [step, setStep] = useState(1)
@@ -21,10 +30,19 @@ function App() {
     page = <Step1 step={step} setStep={setStep} />
   }
   else if (step === 2) {
-    page = <Step2 step={step} setStep={setStep} data={data.select} checked={checked} setChecked={setChecked} />
+    page = <Step2
+      step={step} setStep={setStep}
+      data={data.select}
+      checked={checked} setChecked={setChecked}
+    />
   }
   else if (step === 3) {
-    page = <Step3 step={step}  data={data.add}setStep={setStep} />
+    page = <Step3 step={step}
+      pick={pick} setPick={setPick}
+      data={data.add}
+      setStep={setStep}
+      tabPick={tabPick} setTabPick={setTabPick}
+      handlePick={handlePick} />
   }
   else if (step === 4) {
     page = <Step4 step={step} setStep={setStep} />
