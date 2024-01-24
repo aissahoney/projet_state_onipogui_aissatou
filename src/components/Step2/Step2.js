@@ -6,7 +6,9 @@ import './Step2.css'
 // import img2 from '../../img/advenced.svg'
 // import img3 from '../../img/pro.svg'
 
-const Step2 = ({ step, setStep, checked, setChecked, data }) => {
+const Step2 = ({ step, setStep, checked, setChecked, data, tabPlan,
+    setTabPlan,
+    handlePlan }) => {
     // const [checked, setChecked] = useState(true);
     // const handleChange = val => {
     //     setChecked(val)
@@ -21,11 +23,11 @@ const Step2 = ({ step, setStep, checked, setChecked, data }) => {
                 <div className='icon-container'>
                     {
                         data.map((item, index) =>
-                            <div key={index} className='icon-div'>
+                            <div key={index} className='icon-div' onClick={()=>handlePlan(item)}>
                                 <img src={item.src} alt="" />
                                 <div>
                                     <p>{item.title}</p>
-                                    <p>{checked ? item.price : item.price * 10}</p>
+                                    <p>$ {checked ? item.price : item.price * 10} {checked ? item.monthly : item.yearly}</p>
                                 </div>
                             </div>
                         )
@@ -44,7 +46,7 @@ const Step2 = ({ step, setStep, checked, setChecked, data }) => {
 
             <div className='btn-div'>
                 <button className='back-btn' onClick={() => setStep(step - 1)}>Go Back</button>
-                <button className='next-btn' onClick={() => setStep(step + 1)}>Next Step</button>
+                <button className='next-btn' onClick={() => {setStep(step + 1)} }>Next Step</button>
             </div>
 
         </div>

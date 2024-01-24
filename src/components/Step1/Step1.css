@@ -4,16 +4,16 @@
     align-items: center;
     /* justify-content: space-between; */
     /* padding: 5rem; */
-    width: 50vw;
-    height: 45vw;
-    border: 1px solid rgb(172, 171, 171);
+    width: 40vw;
+    height: 30vw;
+    /* border: 1px solid rgb(172, 171, 171); */
 }
 
 .formDiv{
     display: flex;
     flex-direction: column;
-    padding-bottom: 3rem;
-    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
     /* align-items: center; */
 }
 .form{
@@ -24,4 +24,5 @@
     height: 2.5rem;
     border: 1px solid hsla(240, 1%, 24%, 0.281);
     border-radius: 10px;
+    outline-color: purple;       /*change de couleur au clic */
 }

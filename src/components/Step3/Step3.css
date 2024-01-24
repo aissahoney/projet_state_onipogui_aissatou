@@ -2,9 +2,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 50vw;
-    height: 45vw;
+    width: 40vw;
+    height: 35vw;
+    overflow: hidden;
+    /* padding: 1vw; */
 }
+/* .pick-addContainer{
+    margin: 4vw;
+} */
 
 .pick-div{
     display: flex;
@@ -12,6 +17,6 @@
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 15px;
-    padding: 1.5vw;
+    /* padding: 0.5vw; */
 
 }

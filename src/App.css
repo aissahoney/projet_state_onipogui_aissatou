@@ -1,12 +1,12 @@
 .App{
   display: flex;
   flex-direction: row;
-  /* width: 100vw;
-  height: 100vh; */
+  height: 50vh;
+  width: 90vh;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  margin: 5rem;
+  padding: 7rem;
+  margin: 25vw;
   background-color: white;
   border-radius: 16px;
   gap: 2rem;

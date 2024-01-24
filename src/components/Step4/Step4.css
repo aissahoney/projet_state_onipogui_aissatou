@@ -1,0 +1,25 @@
+.finish-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40vw;
+    height: 35vw;
+}
+.abonnement{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+}
+.finish-container .price-box{
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    background-color:   hsl(217, 100%, 97%);
+}
+
+
+.finish-pick{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
