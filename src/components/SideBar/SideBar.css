@@ -13,14 +13,25 @@
 }
 
 
-.step button{
+.transparent{
+    background:transparent;
+    color: white;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     border: 1px solid white;
-    background-color:hsl(243, 100%, 62%);
     margin-top: 0.5rem;
-    color: white;
+   
+}
+
+.active{
+    background: hsl(206, 94%, 87%);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-top: 0.5rem;
+    
 }
 
 
@@ -33,3 +44,4 @@
     width: 15vw;
     padding-left: 2rem;
 }
+

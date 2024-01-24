@@ -12,8 +12,6 @@ const Summary = () => {
                 <p>fun using our platform. If you ever need support, please</p>
                 <p>feel free to email us at support@loremgaming.com.</p>
             </div>
-            {/* <button>go back</button>
-            <button>complete</button> */}
         </div>
     );
 };

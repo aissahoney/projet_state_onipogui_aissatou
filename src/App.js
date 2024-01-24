@@ -18,10 +18,12 @@ function App() {
   const [checked, setChecked] = useState(true);
 
   const handlePlan = (item) => {
+    if (tabPlan.length!==1) {
       setTabPlan([...tabPlan, item])  
       // console.log(item)
-
   }
+    }
+      
 
   const handlePick = (item) => {
     if (pick) {
@@ -74,7 +76,7 @@ useEffect(()=>
 
   return (
     <div className="App">
-      <SideBar />
+      <SideBar  step={step} setStep={setStep} />
       <div className=''>
         {page}
       </div>

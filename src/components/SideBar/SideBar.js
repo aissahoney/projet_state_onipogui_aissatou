@@ -2,11 +2,13 @@ import React from 'react';
 import './SideBar.css'
 
 
-const SideBar = () => {
+const SideBar = ({step}) => {
+
+
     return (
         <div className='sideBar'>
             <div className='step'>
-                <button> 1 </button>
+                <button className={step === 1 ? 'active' : 'transparent'}> 1 </button>
                 <div>
                     <p>step 1</p>
                     <p>YOUR INFO</p>
@@ -14,7 +16,7 @@ const SideBar = () => {
             </div>
 
             <div className='step'>
-                <button> 2 </button>
+                <button className={step === 2 ? 'active' : 'transparent'}> 2 </button>
                 <div>
                     <p>step 2</p>
                     <p>SELECT PLAN</p>
@@ -22,7 +24,7 @@ const SideBar = () => {
             </div>
 
             <div className='step'>
-                <button> 3 </button>
+                <button className={step === 3 ? "active" :"transparent"}> 3 </button>
                 <div>
                     <p>step 3</p>
                     <p>ADD-ONS</p>
@@ -30,7 +32,7 @@ const SideBar = () => {
             </div>
             
             <div className='step'>
-                <button> 4 </button>
+                <button className={step === 4 ? 'active' :'transparent'}> 4 </button>
                 <div>
                     <p>step 4</p>
                     <p>SUMMARY</p>
