@@ -12,49 +12,41 @@ import Summary from './components/Summary/Summary';
 
 
 function App() {
-  const[tabPlanChoice, setTabPlanChoice]=useState([])        // step2
-  const [pick, setPick] = useState(true)         //step3
-  const [checked, setChecked] = useState(true);    //buttons
+  const [tabPlanChoice, setTabPlanChoice] = useState()        // step2
+  const [tabPicked, setTabPicked] = useState([])            //step3
+  // const [pick, setPick] = useState(true)         //step3
+  const [checked, setChecked] = useState(true);    //buttons et checkbox
+  const[ totalPrice, setTotalPrice]=useState(null)   // step4 total 
 
-//step2 => tableau pour calcul total
+  //step2 => tableau pour calcul total
   const handlePlan = (item) => {
-    const isSelected = tabPlanChoice.includes(item);
-      if (isSelected && tabPlanChoice.length < 1) {
-        setTabPlanChoice(tabPlanChoice.filter((selected) => selected !== item));
-      } 
-      else {
-        setTabPlanChoice([...tabPlanChoice, item])  
-        // console.log(item)
+    setTabPlanChoice(item)
   }
+  useEffect(() =>
+    console.log(tabPlanChoice)
+  )
+
+
+  const handlePickToggle = (element) => {
+    const isSelected = tabPicked.includes(element);
+    if (isSelected) {
+      setTabPicked(tabPicked.filter((selected) => selected !== element));
+    } else {
+      setTabPicked([...tabPicked, element]);
     }
-  // const handlePlan = (item) => {
-  //   if (tabPlan.length!==1) {
-  //     setTabPlan([...tabPlan, item])  
-  //     // console.log(item)
-  // }
-  //   }
-      
-  
-    const [tabPicked, setTabPicked] = useState([])
-  
-  
-    const handlePickToggle = (element) => {
-      const isSelected = tabPicked.includes(element);
-      if (isSelected) {
-        setTabPicked(tabPicked.filter((selected) => selected !== element));
-      } else {
-        setTabPicked([...tabPicked, element]);
-      }
-    };
-  
+  };
 
-// useEffect(()=>
-//   console.log(tabPicked)
-// )
+  // useEffect(()=>
+  //   console.log(tabPicked)
+  // )
 
 
+  // cacul total
 
-  //slide page
+  
+
+
+  //slide pages
   const [step, setStep] = useState(1)
 
   let page;
@@ -73,29 +65,29 @@ function App() {
   }
   else if (step === 3) {
     page = <Step3 step={step}
-      pick={pick} setPick={setPick}
+      // pick={pick} setPick={setPick}
       data={data.add}
       setStep={setStep}
       tabPicked={tabPicked} handlePickToggle={handlePickToggle}
-      />
+    />
 
-      //  handlePick={handlePick}
+    //  handlePick={handlePick}
   }
   else if (step === 4) {
-    page = <Step4 step={step} setStep={setStep} 
-    tabPicked={tabPicked} setTabPicked={setTabPicked}
-    // tabPlan={tabPlan} setTabPlan={setTabPlan}
-    tabPlanChoice={tabPlanChoice} setTabPlanChoice={setTabPlanChoice}
-    checked={checked}/>
+    page = <Step4 step={step} setStep={setStep}
+      tabPicked={tabPicked} setTabPicked={setTabPicked}
+      // tabPlan={tabPlan} setTabPlan={setTabPlan}
+      tabPlanChoice={tabPlanChoice} setTabPlanChoice={setTabPlanChoice}
+      checked={checked}
+      totalPrice={totalPrice} />
   }
-  else 
-  {
-    page= <Summary/>   
+  else {
+    page = <Summary/>
   }
 
   return (
     <div className="App">
-      <SideBar  step={step} setStep={setStep} />
+      <SideBar step={step} setStep={setStep} />
       <div className=''>
         {page}
       </div>

@@ -2,7 +2,11 @@
 import React from 'react';
 import './Step4.css'
 
-const Step4 = ({ step, setStep, tabPicked, tabPlanChoice, checked }) => {
+const Step4 = ({ step, setStep, tabPicked, tabPlanChoice, checked}) => {
+    
+    const totalPrice = tabPicked.reduce((acc, current) => acc + current.price, tabPlanChoice.price);
+
+
     return (
         <div className='finish-container'>
             <div>
@@ -10,30 +14,28 @@ const Step4 = ({ step, setStep, tabPicked, tabPlanChoice, checked }) => {
                 <p>Double-check everything looks OK before confirming.</p>
             </div>
             <div className='price-box'>
-
-                {tabPlanChoice.map((item, index) =>
-                    <div key={index} className='abonnement'  >
+                    <di className='abonnement'  >
                         <div>
-                            <p>{item.title} </p>
+                            <p>{tabPlanChoice.title} {checked ? "(Monthly)" : "(Yearly)"} </p>
+                            <p>Change</p>
                         </div>
-
-
                         <div>
-                            <pre> {`$${item.price}`} {checked ? item.monthly : item.yearly}</pre>
+                            <pre> ${checked ? tabPlanChoice.price : tabPlanChoice.price *10} {checked ? tabPlanChoice.monthly : tabPlanChoice.yearly}</pre>
+                            
                         </div>
-                    </div>
-                )}
+                        
+                    </di>
                 {
                     tabPicked.map((item, index) =>
                         <div key={index}>
                             <div className='finish-pick'>
                                 <p>{item.title}</p>
-                                <p>{`$${item.price}`} {checked ? item.monthly : item.yearly}</p>
+                                <p>${checked ? item.price : item.price*10} {checked ? item.monthly : item.yearly}</p>
                             </div>
                         </div>
                     )
                 }
-                <p>Total (per month)</p>
+                <p>{totalPrice }(per month)</p>
 
             </div >
             <div className='btn-div'>

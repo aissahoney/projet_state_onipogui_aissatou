@@ -26,7 +26,7 @@ const Step2 = ({ step, setStep, checked, setChecked, data,
                                 <img src={item.src} alt="" />
                                 <div>
                                     <p>{item.title}</p>
-                                    <p>$ {checked ? item.price : item.price * 10} {checked ? item.monthly : item.yearly}</p>
+                                    <p>${checked ? item.price : item.price *10} {checked ? item.monthly : item.yearly}</p>
                                 </div>
                             </div>
                         )
@@ -38,6 +38,9 @@ const Step2 = ({ step, setStep, checked, setChecked, data,
                     <input type="checkbox" checked={!checked} id="switch" onChange={() => {
                         setChecked(!checked);
                     }} />
+                    {/* <input type="checkbox" checked={!checked} id="switch" onChange={() => {
+                        setChecked(!checked);
+                    }} /> */}
                     <label for="switch"></label>
                     <span>Yearly</span>
                 </div>
