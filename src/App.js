@@ -12,29 +12,45 @@ import Summary from './components/Summary/Summary';
 
 
 function App() {
-  const[tabPlan, setTabPlan]=useState([])        // step2
-  const [pick, setPick] = useState(true)
-  const [tabPick, setTabPick] = useState([])
-  const [checked, setChecked] = useState(true);
+  const[tabPlanChoice, setTabPlanChoice]=useState([])        // step2
+  const [pick, setPick] = useState(true)         //step3
+  const [checked, setChecked] = useState(true);    //buttons
 
+//step2 => tableau pour calcul total
   const handlePlan = (item) => {
-    if (tabPlan.length!==1) {
-      setTabPlan([...tabPlan, item])  
-      // console.log(item)
+    const isSelected = tabPlanChoice.includes(item);
+      if (isSelected && tabPlanChoice.length < 1) {
+        setTabPlanChoice(tabPlanChoice.filter((selected) => selected !== item));
+      } 
+      else {
+        setTabPlanChoice([...tabPlanChoice, item])  
+        // console.log(item)
   }
     }
+  // const handlePlan = (item) => {
+  //   if (tabPlan.length!==1) {
+  //     setTabPlan([...tabPlan, item])  
+  //     // console.log(item)
+  // }
+  //   }
       
+  
+    const [tabPicked, setTabPicked] = useState([])
+  
+  
+    const handlePickToggle = (element) => {
+      const isSelected = tabPicked.includes(element);
+      if (isSelected) {
+        setTabPicked(tabPicked.filter((selected) => selected !== element));
+      } else {
+        setTabPicked([...tabPicked, element]);
+      }
+    };
+  
 
-  const handlePick = (item) => {
-    if (pick) {
-      setTabPick([...tabPick, item])  
-    }
-  }
-
-
-useEffect(()=>
-  console.log(tabPick)
-)
+// useEffect(()=>
+//   console.log(tabPicked)
+// )
 
 
 
@@ -50,8 +66,8 @@ useEffect(()=>
       step={step} setStep={setStep}
       data={data.select}
       checked={checked} setChecked={setChecked}
-      tabPlan={tabPlan}
-      setTabPlan={setTabPlan}
+      // tabPlan={tabPlan}
+      // setTabPlan={setTabPlan}
       handlePlan={handlePlan}
     />
   }
@@ -60,13 +76,16 @@ useEffect(()=>
       pick={pick} setPick={setPick}
       data={data.add}
       setStep={setStep}
-      tabPick={tabPick} setTabPick={setTabPick}
-      handlePick={handlePick} />
+      tabPicked={tabPicked} handlePickToggle={handlePickToggle}
+      />
+
+      //  handlePick={handlePick}
   }
   else if (step === 4) {
     page = <Step4 step={step} setStep={setStep} 
-    tabPick={tabPick} setTabPick={setTabPick}
-    tabPlan={tabPlan} setTabPlan={setTabPlan}
+    tabPicked={tabPicked} setTabPicked={setTabPicked}
+    // tabPlan={tabPlan} setTabPlan={setTabPlan}
+    tabPlanChoice={tabPlanChoice} setTabPlanChoice={setTabPlanChoice}
     checked={checked}/>
   }
   else 

@@ -6,8 +6,7 @@ import './Step2.css'
 // import img2 from '../../img/advenced.svg'
 // import img3 from '../../img/pro.svg'
 
-const Step2 = ({ step, setStep, checked, setChecked, data, tabPlan,
-    setTabPlan,
+const Step2 = ({ step, setStep, checked, setChecked, data,
     handlePlan }) => {
     // const [checked, setChecked] = useState(true);
     // const handleChange = val => {
@@ -19,7 +18,7 @@ const Step2 = ({ step, setStep, checked, setChecked, data, tabPlan,
                 <h1>Select Your Plan </h1>
                 <p>You have the option of monthly or yearly billing</p>
             </div>
-            <div>
+            <div className='icon-Bigcontainer'>
                 <div className='icon-container'>
                     {
                         data.map((item, index) =>

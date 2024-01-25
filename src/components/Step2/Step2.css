@@ -16,9 +16,14 @@
     /* padding:1vw; */
 
 }
+.icon-Bigcontainer{
+    display: flex;
+    flex-direction: column;
+   gap: 2vw;
+}
 
 .icon-div{
-    border: 1px solid black;
+    border: 1px solid hsla(240, 1%, 24%, 0.183);
     border-radius: 10px;
     width: 11vw;
     padding: 1vw;
@@ -39,22 +44,7 @@
     padding: 1vw;
 
 }
-/* .bg-switch{
-    background: hsl(213, 96%, 18%);
-    height: 2rem;
-    width: 5rem;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-} */
 
-/* .slider{
-    background-color: white;
-    position: absolute;
-    height: 1.8rem;
-    width: 1.8rem;
-    border-radius: 50%;
-} */
 
 .switch-btn input[type=checkbox]{
 	height: 0;

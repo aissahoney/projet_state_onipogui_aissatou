@@ -14,15 +14,15 @@
     flex-direction: column;
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
-    /* align-items: center; */
 }
+
 .form{
     width: 27vw;
 }
 
 .form input{
     height: 2.5rem;
-    border: 1px solid hsla(240, 1%, 24%, 0.281);
+    border: 1px solid hsla(240, 1%, 24%, 0.183);
     border-radius: 10px;
-    outline-color: purple;       /*change de couleur au clic */
+    outline-color: rgba(128, 0, 128, 0.6);       /*change de couleur au clic */
 }

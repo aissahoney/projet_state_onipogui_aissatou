@@ -2,7 +2,7 @@
 import React from 'react';
 import './Step4.css'
 
-const Step4 = ({ step, setStep, tabPick, setTabPick, tabPlan, setTabPlan, checked }) => {
+const Step4 = ({ step, setStep, tabPicked, tabPlanChoice, checked }) => {
     return (
         <div className='finish-container'>
             <div>
@@ -11,9 +11,12 @@ const Step4 = ({ step, setStep, tabPick, setTabPick, tabPlan, setTabPlan, checke
             </div>
             <div className='price-box'>
 
-                {tabPlan.map((item, index) =>
-                    <div  key={index} className='abonnement'>
-                        <p>{item.title} </p>
+                {tabPlanChoice.map((item, index) =>
+                    <div key={index} className='abonnement'  >
+                        <div>
+                            <p>{item.title} </p>
+                        </div>
+
 
                         <div>
                             <pre> {`$${item.price}`} {checked ? item.monthly : item.yearly}</pre>
@@ -21,11 +24,11 @@ const Step4 = ({ step, setStep, tabPick, setTabPick, tabPlan, setTabPlan, checke
                     </div>
                 )}
                 {
-                    tabPick.map((item, index) =>
+                    tabPicked.map((item, index) =>
                         <div key={index}>
                             <div className='finish-pick'>
                                 <p>{item.title}</p>
-                                <p>{`$${item.price}/mo`}</p>
+                                <p>{`$${item.price}`} {checked ? item.monthly : item.yearly}</p>
                             </div>
                         </div>
                     )

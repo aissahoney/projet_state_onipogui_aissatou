@@ -2,7 +2,7 @@
 import React from 'react';
 import './Step3.css'
 
-const Step3 = ({ step, setStep, data , handlePick,tabPick, checked}) => {
+const Step3 = ({ step, setStep, data , handlePickToggle,tabPicked, checked}) => {
     return (
         <div className='pick-container'>
             <div>
@@ -14,7 +14,7 @@ const Step3 = ({ step, setStep, data , handlePick,tabPick, checked}) => {
                 data.map((item, index) =>
                     <div key={index}  className='pick-div'>
                         <div >
-                            <input type="checkbox" onClick={()=>handlePick(item)} checked={checked}  />
+                            <input type="checkbox" onClick={()=>handlePickToggle(item)}   checked={tabPicked.includes(item)}/>
                             <p>{item.title}</p>
                             <p>{item.text}</p>
                         </div >
@@ -31,7 +31,7 @@ const Step3 = ({ step, setStep, data , handlePick,tabPick, checked}) => {
 
             <div className='btn-div'>
                 <button className='back-btn' onClick={() => setStep(step - 1)}>Go Back</button>
-                <button className='next-btn' onClick={() => setStep(step + 1)}>Next Step</button>
+                <button className='next-btn' onClick={() => setStep(step + 1) }>Next Step</button>
             </div>
 
         </div>

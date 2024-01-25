@@ -31,19 +31,16 @@ const Step1 = ({step, setStep}) => {
             <form onSubmit={handleSubmit} className='form'>
                 <label className='formDiv'>
                     Your name is: {info.name}
-                    <input type="name" name="name" onChange={handleChange} />
+                    <input type="name" name="name" placeholder='bikette bulte' onChange={handleChange} />
                 </label>
-                {/* <input type="submit" value="Envoyer" /> */}
                 <label className='formDiv'>
                     Your email is: {info.email}
-                    <input type="email" name="email" onChange={handleChange} />
+                    <input type="email" name="email" placeholder='bikette@bulte.com' onChange={handleChange} />
                 </label>
-                {/* <input type="submit" value="Envoyer" /> */}
                 <label className='formDiv'>
                     Your phone number is: {info.phone}
-                    <input type="phone" name="phone"  onChange={handleChange}/>
+                    <input type="phone" name="phone" placeholder='04568865' onChange={handleChange}/>
                 </label>
-                {/* <input type="submit" value="Envoyer" /> */}
                 <button className='next-btn' onClick={()=>setStep(step + 1)}>Next Step</button>
             </form>
         </div>
