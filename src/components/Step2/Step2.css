@@ -7,7 +7,6 @@
 
 }
 
-
 /* div container icon  */
 .icon-container{
     display: flex;
@@ -29,6 +28,15 @@
     padding: 1vw;
     gap: 2px;
 }
+.icon-active{
+    border: 2px solid rgba(128, 0, 128, 0.6); 
+    background: hsl(228, 12%, 92%);
+    border-radius: 10px;
+    width: 11vw;
+    padding: 1vw;
+    gap: 2px;
+}
+
 
 
 

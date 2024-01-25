@@ -7,18 +7,21 @@ const Step3 = ({ step, setStep, data , handlePickToggle,tabPicked, checked}) => 
         <div className='pick-container'>
             <div>
                 <h1>Pick add-ons</h1>
-                <p>Add-ons help enhance your gaming experience.</p>
+                <p className='color-grey'> Add-ons help enhance your gaming experience.</p>
             </div>
             <div className='pick-addContainer'>
             {
                 data.map((item, index) =>
                     <div key={index}  className='pick-div'>
-                        <div >
-                            <input type="checkbox" onClick={()=>handlePickToggle(item)}   checked={tabPicked.includes(item)}/>
-                            <p>{item.title}</p>
-                            <p>{item.text}</p>
+                        <div className='checkbox-div'>
+                            <input type="checkbox" onClick={()=>handlePickToggle(item)}  checked={tabPicked.includes(item)} className={checked? 'color-blue':'color-grey'} />
+                            <div>
+                            <p className='color-blue'>{item.title}</p>
+                            <p className='color-grey'>{item.text}</p>
+                            </div>
+                            
                         </div >
-                        <div>
+                        <div className='color-purple'>
                             {`+$${item.price}/mo`}
                         </div>
 
@@ -26,9 +29,6 @@ const Step3 = ({ step, setStep, data , handlePickToggle,tabPicked, checked}) => 
                 )
             }
         </div>
-
-
-
             <div className='btn-div'>
                 <button className='back-btn' onClick={() => setStep(step - 1)}>Go Back</button>
                 <button className='next-btn' onClick={() => setStep(step + 1) }>Next Step</button>

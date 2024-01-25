@@ -10,13 +10,14 @@ import Summary from './components/Summary/Summary';
 
 
 
-
 function App() {
-  const [tabPlanChoice, setTabPlanChoice] = useState()        // step2
+  const [tabPlanChoice, setTabPlanChoice] = useState(null)        // step2
+  const [activeItemIndex, setActiveItemIndex] = useState(null);
   const [tabPicked, setTabPicked] = useState([])            //step3
   // const [pick, setPick] = useState(true)         //step3
   const [checked, setChecked] = useState(true);    //buttons et checkbox
-  const[ totalPrice, setTotalPrice]=useState(null)   // step4 total 
+  const[ totalPrice, setTotalPrice]= useState(null)   // step4 total 
+
 
   //step2 => tableau pour calcul total
   const handlePlan = (item) => {
@@ -26,7 +27,13 @@ function App() {
     console.log(tabPlanChoice)
   )
 
+  //step2 choix du active
+  const handleItemClick = (index) => {
+    // Mettez à jour l'état pour marquer l'élément comme actif
+    setActiveItemIndex(index);
+  };
 
+//step3 => select add-Ons 
   const handlePickToggle = (element) => {
     const isSelected = tabPicked.includes(element);
     if (isSelected) {
@@ -42,7 +49,7 @@ function App() {
 
 
   // cacul total
-
+  // setTotalPrice(tabPicked.reduce((acc, current) => acc + current.price, tabPlanChoice.price));
   
 
 
@@ -61,25 +68,25 @@ function App() {
       // tabPlan={tabPlan}
       // setTabPlan={setTabPlan}
       handlePlan={handlePlan}
+      activeItemIndex={activeItemIndex}
+      handleItemClick={handleItemClick}
     />
   }
   else if (step === 3) {
     page = <Step3 step={step}
-      // pick={pick} setPick={setPick}
       data={data.add}
       setStep={setStep}
       tabPicked={tabPicked} handlePickToggle={handlePickToggle}
     />
 
-    //  handlePick={handlePick}
   }
   else if (step === 4) {
     page = <Step4 step={step} setStep={setStep}
       tabPicked={tabPicked} setTabPicked={setTabPicked}
-      // tabPlan={tabPlan} setTabPlan={setTabPlan}
       tabPlanChoice={tabPlanChoice} setTabPlanChoice={setTabPlanChoice}
       checked={checked}
-      totalPrice={totalPrice} />
+      totalPrice={totalPrice} 
+      setTotalPrice={setTotalPrice}/>
   }
   else {
     page = <Summary/>

@@ -1,8 +1,8 @@
 .App{
   display: flex;
   flex-direction: row;
-  height: 50vh;
-  width: 90vh;
+  height: 60vh;
+  width: 100vh;
   align-items: center;
   justify-content: center;
   padding: 8.5rem;
@@ -10,4 +10,18 @@
   background-color: white;
   border-radius: 16px;
   gap: 2rem;
+}
+
+
+.color-grey{
+  color: grey;
+}
+
+.color-blue{
+  color: hsl(213, 96%, 18%);
+  font-weight: bold;
+}
+
+.color-purple{
+  color:hsl(243, 100%, 62%);
 }

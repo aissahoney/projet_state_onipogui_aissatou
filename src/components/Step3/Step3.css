@@ -3,13 +3,10 @@
     flex-direction: column;
     justify-content: space-between;
     width: 40vw;
-    height: 35vw;
-    overflow: hidden;
+    height: 40vw;
+    /* overflow: hidden; */
     /* padding: 1vw; */
 }
-/* .pick-addContainer{
-    margin: 4vw;
-} */
 
 .pick-div{
     display: flex;
@@ -17,6 +14,19 @@
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 15px;
-    /* padding: 0.5vw; */
-
+    margin: 2vw;
+    padding: 2px;
+    font-size: 15px;
+    align-items: center;
 }
+.checkbox-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:3px
+    
+}
+
+/* .checkbox-div p{
+    padding: 4px;
+} */

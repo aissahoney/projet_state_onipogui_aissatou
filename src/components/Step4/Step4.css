@@ -23,3 +23,13 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.change-btn{
+    color: rgb(152, 151, 151);
+    text-decoration: underline;
+}
+.total-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
