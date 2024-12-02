@@ -35,7 +35,6 @@ const Step2 = ({ step, setStep, checked, setChecked, data,
                     <input type="checkbox" checked={!checked} id="switch" onChange={() => {
                         setChecked(!checked);
                     }} />
-                   
                     <label for="switch"></label>
                     <span className={!checked? 'color-blue':'color-grey'}>Yearly</span>
                 </div>
