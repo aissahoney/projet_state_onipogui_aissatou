@@ -4,7 +4,7 @@ import './Step4.css'
 
 const Step4 = ({ step, setStep, tabPicked, tabPlanChoice, checked, totalPrice, setTotalPrice}) => {
 
-    setTotalPrice(tabPicked.reduce((acc, current) => acc + current.price, tabPlanChoice.price))
+    setTotalPrice(tabPicked.reduce((acc, current) => acc + current.price, tabPlanChoice?.price))
     return (
         <div className='finish-container'>
             <div>
@@ -14,11 +14,11 @@ const Step4 = ({ step, setStep, tabPicked, tabPlanChoice, checked, totalPrice, s
             <div className='price-box'>
                     <di className='abonnement'  >
                         <div >
-                            <p className='color-blue' >{tabPlanChoice.title} {checked ? "(Monthly)" : "(Yearly)"} </p>
+                            <p className='color-blue' >{tabPlanChoice?.title} {checked ? "(Monthly)" : "(Yearly)"} </p>
                             <p  className='change-btn'onClick={() => setStep(step - 2)}>Change</p>
                         </div>
                         <div className='color-blue'>
-                            <p> ${checked ? tabPlanChoice.price : tabPlanChoice.price *10} {checked ? tabPlanChoice.monthly : tabPlanChoice.yearly}</p>
+                            <p> ${checked ? tabPlanChoice?.price : tabPlanChoice?.price *10} {checked ? tabPlanChoice?.monthly : tabPlanChoice?.yearly}</p>
                             
                         </div>
                         
@@ -35,7 +35,7 @@ const Step4 = ({ step, setStep, tabPicked, tabPlanChoice, checked, totalPrice, s
                 }
                 <div className='total-div'>
                 <p className='color-grey'> Total {checked ? "(per month)" : "(per year)"}</p>
-                <h2 className='color-purple'>${checked ? totalPrice: totalPrice*10} {checked ? tabPlanChoice.monthly : tabPlanChoice.yearly} </h2>
+                <h2 className='color-purple'>${checked ? totalPrice: totalPrice*10} {checked ? tabPlanChoice?.monthly : tabPlanChoice?.yearly} </h2>
                 </div>
             </div >
             <div className='btn-div'>
